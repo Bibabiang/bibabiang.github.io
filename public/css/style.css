@@ -1,0 +1,115 @@
+/* 公共 部分 */
+.bg_darkblue{background-color: #1c3d5c}
+body{position: relative;}
+.navbar.fixed-top{
+    background: rgba(255, 255, 255, 0.2);
+    transition: 1s;
+}
+main{
+    z-index: 10;
+}
+/* 点击效果 */
+.click_circle{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: rgba(255, 255, 255) solid 1px;
+    opacity: .2;
+    position: absolute;bottom: 0;
+    animation: circle 1s infinite linear;
+}
+/* 游泳的小鱼 */
+.fish_left{
+    position: absolute;
+    left: 0;
+    top: 32rem;
+    z-index: 1;
+}
+.fish_right{
+    position: absolute;
+    right: 0;
+    top: 18rem;
+    z-index: 1;
+    transform: rotateY(180deg)
+}
+.fish_left .fish{
+    width: 100px;
+    height: 100px;
+    background: url('../../public/img/fish.png');
+    background-size: cover;
+    animation: fishleft 20s infinite linear;
+}
+.fish_right .fish{
+    width: 100px;
+    height: 100px;
+    background: url('../../public/img/fish.png');
+    background-size: cover;
+    animation: fishright 20s infinite linear;
+}
+.fish_left .fish:nth-child(1){margin-left:-100px;}
+.fish_left .fish:nth-child(2){margin-left:-300px;}
+.fish_left .fish:nth-child(3){margin-left:-700px;}
+.fish_right .fish:nth-child(2){margin-left:200px;}
+.fish_right .fish:nth-child(3){margin-left:700px;}
+
+#index .jumbotron-heading{
+    font-size: 6rem;
+    font-weight: 100;
+    color: #f35626;
+    background-image: linear-gradient(92deg, #ffeacc 0%,#f35626 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hue 60s infinite linear;
+}
+#index .jumbotron {
+    padding: 10rem 1rem;
+    margin-bottom: 0;
+    min-height: 32rem;
+    background-image: url(../../public/img/index_bg_001.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.trasition{
+    text-align: center;
+    font-size: 32px;
+    color: #fff;
+    line-height: 200px;
+    background-image: url('../../public/img/bg_003.jpg');
+    background-attachment:fixed;
+    background-size: cover;
+    min-height: 200px;
+}
+#index a {
+    color: #fff;
+}
+footer{
+    min-height: 200px;
+    background-image: url(../../public/img/bg_002.jpg)
+}
+@media (min-width: 768px){
+
+}
+@keyframes hue {
+    from {
+      filter: hue-rotate(0deg);
+    }
+  
+    to {
+      filter: hue-rotate(-360deg);
+    }
+  }
+@keyframes circle{
+      from{transform:translateY(0);opacity: .5;}
+      to{transform:translateY(-60px);width: 24px;height: 24px;opacity:0;}
+  }
+  
+@keyframes fishright{
+    from{transform:translateX(0);opacity: 1;}
+    to{transform:translateX(400px);opacity: 0;}
+}
+@keyframes fishleft{
+    from{transform:translateX(0);opacity: 1;}
+    to{transform:translateX(400px);opacity: 0;}
+}
+  
